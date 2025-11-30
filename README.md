@@ -47,7 +47,15 @@ SellerBrandBook/
 
 ## 🌐 مشاهده آنلاین
 
-پس از پوش کردن به GitHub Pages، می‌توانید برندبوک را به صورت آنلاین مشاهده کنید.
+برندبوک به صورت آنلاین در دسترس است:
+
+🔗 **GitHub Repository**: [https://github.com/mrsadri/seller-brandbook](https://github.com/mrsadri/seller-brandbook)
+
+برای فعال‌سازی GitHub Pages:
+1. به تنظیمات ریپازیتوری بروید
+2. در بخش Pages، منبع را روی "main" تنظیم کنید
+3. پس از چند دقیقه، برندبوک در آدرس زیر در دسترس خواهد بود:
+   `https://mrsadri.github.io/seller-brandbook/`
 
 ## 📄 مجوز
 
