@@ -1,3 +1,12 @@
+/* DanaVF Font Face */
+@font-face {
+    font-family: 'DanaVF';
+    src: url('DanaVF.ttf') format('truetype');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
 /* Reset and Base Styles */
 * {
     margin: 0;
@@ -16,7 +25,7 @@
     --dark-gray: #757575;
     
     /* Typography - Persian Font */
-    --font-primary: 'Vazirmatn', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    --font-primary: 'DanaVF', 'Dana', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     
     /* Spacing */
     --spacing-xs: 0.5rem;
@@ -56,16 +65,18 @@ body {
 
 .brand-title {
     font-size: 3.5rem;
-    font-weight: 800;
+    font-weight: 700;
     margin-bottom: var(--spacing-sm);
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-    letter-spacing: -0.02em;
+    letter-spacing: -0.01em;
+    font-variation-settings: 'wght' 700;
 }
 
 .brand-subtitle {
     font-size: 1.25rem;
     font-weight: 400;
     opacity: 0.95;
+    font-variation-settings: 'wght' 400;
 }
 
 /* Main Content */
@@ -91,6 +102,7 @@ body {
     padding-bottom: var(--spacing-sm);
     border-bottom: 3px solid var(--brand-yellow);
     display: inline-block;
+    font-variation-settings: 'wght' 700;
 }
 
 .section-description {
@@ -127,6 +139,7 @@ body {
     font-weight: 600;
     color: var(--charcoal-black);
     margin-bottom: var(--spacing-xs);
+    font-variation-settings: 'wght' 600;
 }
 
 .variant-description {
@@ -204,6 +217,7 @@ body {
     font-weight: 600;
     color: var(--charcoal-black);
     margin-bottom: var(--spacing-md);
+    font-variation-settings: 'wght' 600;
 }
 
 .guidelines-list {
@@ -280,10 +294,11 @@ body {
     font-weight: 600;
     color: var(--charcoal-black);
     margin-bottom: var(--spacing-xs);
+    font-variation-settings: 'wght' 600;
 }
 
 .color-code {
-    font-family: 'Courier New', 'Vazirmatn', monospace;
+    font-family: 'Courier New', 'DanaVF', monospace;
     font-size: 1rem;
     color: var(--brand-yellow);
     background: var(--light-gray);
@@ -298,7 +313,7 @@ body {
 
 .color-rgb,
 .color-cmyk {
-    font-family: 'Courier New', 'Vazirmatn', monospace;
+    font-family: 'Courier New', 'DanaVF', monospace;
     font-size: 0.85rem;
     color: var(--dark-gray);
     background: var(--light-gray);
@@ -338,22 +353,26 @@ body {
     margin-bottom: var(--spacing-md);
     padding-bottom: var(--spacing-xs);
     border-bottom: 2px solid var(--brand-yellow);
+    font-variation-settings: 'wght' 600;
 }
 
 .heading-1 {
     font-size: 3rem;
-    font-weight: 800;
+    font-weight: 700;
     color: var(--charcoal-black);
     margin-bottom: var(--spacing-sm);
     line-height: 1.4;
+    font-variation-settings: 'wght' 700;
+    letter-spacing: -0.01em;
 }
 
 .heading-2 {
     font-size: 2rem;
-    font-weight: 700;
+    font-weight: 600;
     color: var(--charcoal-black);
     margin-bottom: var(--spacing-sm);
     line-height: 1.5;
+    font-variation-settings: 'wght' 600;
 }
 
 .heading-3 {
@@ -362,20 +381,25 @@ body {
     color: var(--charcoal-black);
     margin-bottom: var(--spacing-sm);
     line-height: 1.6;
+    font-variation-settings: 'wght' 600;
 }
 
 .body-text {
     font-size: 1rem;
-    line-height: 2;
+    line-height: 2.2;
     color: var(--charcoal-black);
     margin-bottom: var(--spacing-sm);
     text-align: justify;
+    font-weight: 400;
+    font-variation-settings: 'wght' 400;
 }
 
 .body-text-small {
     font-size: 0.875rem;
-    line-height: 1.8;
+    line-height: 2;
     color: var(--dark-gray);
+    font-weight: 400;
+    font-variation-settings: 'wght' 400;
 }
 
 /* Spacing Demo */
