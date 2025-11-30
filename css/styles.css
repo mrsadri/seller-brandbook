@@ -1,7 +1,7 @@
 /* DanaVF Font Face */
 @font-face {
     font-family: 'DanaVF';
-    src: url('DanaVF.ttf') format('truetype');
+    src: url('../assets/fonts/DanaVF.ttf') format('truetype');
     font-weight: 100 900;
     font-style: normal;
     font-display: swap;
@@ -528,6 +528,94 @@ body {
         margin-left: 0;
         margin-top: 0.25rem;
     }
+}
+
+/* Download Buttons */
+.download-btn {
+    display: inline-block;
+    margin-top: var(--spacing-sm);
+    padding: 0.75rem 1.5rem;
+    background-color: var(--brand-yellow);
+    color: var(--charcoal-black);
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(241, 190, 26, 0.3);
+    text-align: center;
+    font-variation-settings: 'wght' 600;
+}
+
+.download-btn:hover {
+    background-color: #E5A800;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(241, 190, 26, 0.4);
+}
+
+.download-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 6px rgba(241, 190, 26, 0.3);
+}
+
+.download-btn-primary {
+    background-color: var(--charcoal-black);
+    color: var(--white);
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    margin-top: var(--spacing-md);
+    display: block;
+    width: fit-content;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.download-btn-primary:hover {
+    background-color: var(--deep-black);
+    box-shadow: 0 4px 12px rgba(35, 31, 32, 0.4);
+}
+
+/* Font License Notice */
+.font-license-notice {
+    background: #FFF3CD;
+    border: 2px solid #FFC107;
+    border-radius: 12px;
+    padding: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+    margin-top: var(--spacing-md);
+}
+
+.license-warning {
+    color: #856404;
+    font-size: 0.95rem;
+    line-height: 1.8;
+    margin-bottom: var(--spacing-sm);
+}
+
+.license-warning strong {
+    color: #856404;
+    font-weight: 700;
+}
+
+.license-warning a {
+    color: var(--charcoal-black);
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+.license-warning a:hover {
+    color: var(--brand-yellow);
+}
+
+/* Logo Variant with Download Button */
+.logo-variant {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-variant .download-btn {
+    align-self: center;
+    margin-top: var(--spacing-md);
 }
 
 /* Print Styles */
