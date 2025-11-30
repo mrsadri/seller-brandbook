@@ -410,6 +410,19 @@ body {
     box-shadow: 0 4px 20px rgba(241, 190, 26, 0.3);
 }
 
+/* Logo background corrections */
+#logo > div > div:nth-child(1) > div {
+    background-color: #231f20;
+}
+
+#logo > div > div:nth-child(2) > div {
+    background-color: #f1be1a;
+}
+
+#logo > div > div:nth-child(3) > div {
+    background-color: #ffffff;
+}
+
 .logo-image {
     max-width: 100%;
     height: auto;
