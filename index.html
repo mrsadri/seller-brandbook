@@ -18,7 +18,7 @@
             <div class="nav-content">
                 <div class="nav-logo">
                     <a href="#home" class="logo-link">
-                        <span class="logo-text">پلتفرم شرکای بیمه‌بازار</span>
+                        <span class="logo-text">شرکا</span>
                     </a>
                 </div>
                 <ul class="nav-menu" id="navMenu">
@@ -36,6 +36,7 @@
                 </button>
             </div>
         </div>
+        <div class="nav-backdrop" id="navBackdrop"></div>
     </nav>
 
     <!-- Hero Section -->
@@ -321,13 +322,12 @@
                         <p class="component-group-description">دکمه‌های اصلی برای اقدامات مهم و فراخوان‌های عملیاتی</p>
                         <div class="component-examples">
                             <button class="btn btn-primary">دکمه اصلی</button>
-                            <button class="btn btn-action">دکمه اقدام</button>
                             <button class="btn btn-secondary">دکمه ثانویه</button>
                             <button class="btn btn-outline">دکمه خطی</button>
                             <button class="btn btn-ghost">دکمه شفاف</button>
                         </div>
                         <div class="component-notes">
-                            <p><strong>نکته:</strong> دکمه اصلی (#F1BE1A) برای اقدامات اصلی استفاده می‌شود. دکمه اقدام (#FFC453) برای عملیات‌های خاص مانند دریافت اطلاعات تماس استفاده می‌شود.</p>
+                            <p><strong>نکته:</strong> دکمه اصلی (#F1BE1A) برای اقدامات اصلی استفاده می‌شود.</p>
                         </div>
                     </div>
 
@@ -335,12 +335,13 @@
                         <h3 class="component-group-title">بج‌ها و برچسب‌ها</h3>
                         <p class="component-group-description">برای نمایش وضعیت‌ها و دسته‌بندی‌ها</p>
                         <div class="component-examples">
-                            <span class="badge badge-success">فعال</span>
-                            <span class="badge badge-inactive">غیرفعال</span>
-                            <span class="badge badge-payment-cash">نقدی</span>
-                            <span class="badge badge-payment-installment">قسطی</span>
-                            <span class="badge badge-expired">منقضی شده</span>
-                            <span class="badge badge-renewed">تمدید شده</span>
+                            <span class="badge badge-default">پیش‌فرض</span>
+                            <span class="badge badge-primary">اصلی</span>
+                            <span class="badge badge-success">موفقیت</span>
+                            <span class="badge badge-info">اطلاعات</span>
+                            <span class="badge badge-warning">هشدار</span>
+                            <span class="badge badge-error">خطا</span>
+                            <span class="badge badge-disable">غیرفعال</span>
                         </div>
                     </div>
 
@@ -356,21 +357,57 @@
                                     <p>این یک نمونه کارت است که برای نمایش اطلاعات گروه‌بندی شده استفاده می‌شود.</p>
                                 </div>
                             </div>
-                            <div class="card-example lead-card-example">
-                                <div class="card-body">
-                                    <div class="lead-card-info">
-                                        <div class="lead-badges">
-                                            <span class="badge badge-expired">۸ روز تا انقضاء</span>
-                                            <span class="badge badge-payment-installment">قسطی</span>
+                            <div class="lead-card-figma">
+                                <div class="lead-card-info-row">
+                                    <div class="lead-card-data-chunk lead-card-data-01">
+                                        <div class="lead-card-name">
+                                            پارسال الهامی
                                         </div>
-                                        <h4 class="lead-name">نام و نام‌خانوادگی مشتری</h4>
-                                        <p class="lead-details">اطلاعات بیمه و خودرو</p>
+                                    </div>
+                                    <div class="lead-card-data-chunk lead-card-data-02">
+                                        <div class="lead-card-vehicle-info">
+                                            سمند EF7 اتومات | ۱۳۹۹
+                                        </div>
+                                    </div>
+                                    <div class="lead-card-data-chunk lead-card-data-03">
+                                        <div class="lead-card-insurance-info">
+                                            <span class="lead-card-insurance-company">کارگران آسیا</span>
+                                            <span class="lead-card-divider">|</span>
+                                            <span class="lead-card-insurance-type">شخص ثالث</span>
+                                        </div>
+                                    </div>
+                                    <div class="lead-card-data-chunk lead-card-data-04">
+                                        <div class="lead-card-state-holder">
+                                            <span class="badge badge-warning">۸ روز تا انقضاء</span>
+                                            <span class="badge badge-success">نقدی</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="lead-card-action-row">
+                                    <div class="lead-card-note-section">
+                                        <button class="lead-card-note-edit-btn">
+                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M11.05 3.00002L4.20835 10.2417C3.95002 10.5167 3.70002 11.0584 3.65002 11.4334L3.34169 14.1334C3.23335 15.1084 3.93335 15.775 4.90002 15.6084L7.58335 15.15C7.95835 15.0834 8.48335 14.8084 8.74169 14.525L15.5834 7.28335C16.7667 6.03335 17.3 4.60835 15.4584 2.86668C13.625 1.14168 12.2334 1.75002 11.05 3.00002Z" stroke="#262626" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M9.90833 4.20831C10.2667 6.50831 12.1333 8.26665 14.45 8.49998" stroke="#262626" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M2.5 18.3333H17.5" stroke="#262626" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </button>
+                                        <span class="lead-card-note-text">افزودن یاد‌داشت</span>
+                                    </div>
+                                    <div class="lead-card-call-to-action">
+                                        <button class="lead-card-buy-btn">خرید بیمه</button>
+                                        <button class="lead-card-call-btn">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M22 16.92V19.92C22.0011 20.1985 21.9441 20.4742 21.8325 20.7292C21.7209 20.9842 21.5573 21.2126 21.3522 21.3979C21.1472 21.5832 20.9053 21.7212 20.6441 21.8021C20.3829 21.8831 20.1085 21.9049 19.84 21.866C16.7433 21.4951 13.787 20.3687 11.19 18.558C8.77382 16.9308 6.72533 14.7499 5.19 12.19C3.36995 9.56681 2.24049 6.57487 1.87 3.44C1.828 3.17148 1.85013 2.89704 1.93438 2.63755C2.01863 2.37806 2.16262 2.14032 2.354 1.94C2.54538 1.73969 2.77909 1.58174 3.03821 1.47786C3.29733 1.37397 3.57541 1.32684 3.854 1.34H6.88C7.37578 1.33629 7.85274 1.53231 8.19482 1.88085C8.53689 2.22939 8.71262 2.69904 8.68 3.17C8.56906 4.65436 8.71065 6.14156 9.099 7.58C9.22222 8.04086 9.17754 8.52911 8.97237 8.96411C8.76721 9.39911 8.41411 9.75221 7.98 9.92C7.55999 10.1033 7.18953 10.3784 6.89458 10.7249C6.59962 11.0713 6.388 11.4801 6.27 11.92C6.14795 12.3602 6.16242 12.8219 6.31151 13.2543C6.46061 13.6867 6.73852 14.0727 7.12 14.37C9.42963 16.2184 12.2222 17.4622 15.2 18H15.44C15.9108 17.9674 16.3804 18.1421 16.7288 18.4843C17.0772 18.8265 17.2733 19.3045 17.27 19.8V22.92C17.2691 23.2405 17.1555 23.5497 16.9488 23.7969C16.7421 24.0441 16.4555 24.2138 16.14 24.28C15.5633 24.3883 14.9769 24.4426 14.39 24.44C12.1697 24.4402 9.96932 24.0231 7.9 23.21C7.68934 23.1351 7.49637 23.0204 7.33206 22.8729C7.16774 22.7255 7.03549 22.5482 6.943 22.35C6.85051 22.1518 6.79966 21.9369 6.79351 21.7185C6.78736 21.5002 6.82603 21.2828 6.907 21.08" stroke="#262626" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                            <span>۰۹۱۲۱۴۳۸۹۷۶</span>
+                                        </button>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="component-notes">
-                            <p><strong>نکته:</strong> کارت‌های لید برای نمایش اطلاعات مشتریان پیشنهادی استفاده می‌شوند. از بج‌های وضعیت برای نمایش اطلاعات مهم مانند تاریخ انقضاء و نوع پرداخت استفاده کنید.</p>
+                            <p><strong>نکته:</strong> کارت‌های لید برای نمایش اطلاعات مشتریان پیشنهادی در بخش «مشتریان پیشنهادی» پنل شریک استفاده می‌شوند. این کارت‌ها شامل اطلاعات کامل مشتری، بج‌های وضعیت، و دکمه‌های اقدام هستند.</p>
                         </div>
                     </div>
 
@@ -536,17 +573,34 @@
         // Mobile menu toggle
         const navToggle = document.getElementById('navToggle');
         const navMenu = document.getElementById('navMenu');
+        const navBackdrop = document.getElementById('navBackdrop');
         
-        navToggle.addEventListener('click', () => {
+        function toggleMobileMenu() {
+            const isActive = navMenu.classList.contains('active');
             navMenu.classList.toggle('active');
             navToggle.classList.toggle('active');
-        });
+            if (navBackdrop) {
+                navBackdrop.classList.toggle('active');
+            }
+            // Prevent body scroll when menu is open
+            document.body.style.overflow = isActive ? '' : 'hidden';
+        }
+        
+        navToggle.addEventListener('click', toggleMobileMenu);
+        
+        if (navBackdrop) {
+            navBackdrop.addEventListener('click', toggleMobileMenu);
+        }
 
         // Close mobile menu when clicking on a link
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
                 navMenu.classList.remove('active');
                 navToggle.classList.remove('active');
+                if (navBackdrop) {
+                    navBackdrop.classList.remove('active');
+                }
+                document.body.style.overflow = '';
             });
         });
     </script>
