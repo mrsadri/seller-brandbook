@@ -983,11 +983,6 @@ img {
     .section-title {
         font-size: 2.5rem;
     }
-    
-    .lead-card-figma {
-        width: 100%;
-        max-width: 100%;
-    }
 }
 
 /* Medium Desktop / Large Tablet (769px - 900px) - Menu still visible but tighter */
@@ -1056,22 +1051,6 @@ img {
     
     .heading-3 {
         font-size: 1.3125rem;
-    }
-    
-    .lead-card-figma {
-        width: 100%;
-        max-width: 100%;
-    }
-    
-    .lead-card-info-row {
-        flex-wrap: wrap;
-        height: auto;
-        gap: 10px;
-    }
-    
-    .lead-card-data-chunk {
-        width: calc(50% - 5px) !important;
-        flex: 0 0 calc(50% - 5px);
     }
     
     .color-swatch {
@@ -1150,31 +1129,6 @@ img {
     
     .component-examples {
         flex-wrap: wrap;
-    }
-    
-    .lead-card-figma {
-        width: 100%;
-        max-width: 100%;
-    }
-    
-    .lead-card-info-row {
-        flex-wrap: wrap;
-        height: auto;
-        gap: 12px;
-    }
-    
-    .lead-card-data-chunk {
-        width: calc(50% - 6px) !important;
-    }
-    
-    .lead-card-data-01,
-    .lead-card-data-02 {
-        width: calc(50% - 6px);
-    }
-    
-    .lead-card-data-03,
-    .lead-card-data-04 {
-        width: calc(50% - 6px);
     }
     
     .color-swatch {
@@ -1384,30 +1338,6 @@ img {
         bottom: 1rem;
         width: 45px;
         height: 45px;
-    }
-    
-    .lead-card-figma {
-        width: 100%;
-        max-width: 100%;
-    }
-    
-    .lead-card-info-row {
-        flex-wrap: wrap;
-        height: auto;
-        gap: 12px;
-    }
-    
-    .lead-card-data-chunk {
-        width: 100% !important;
-    }
-    
-    .lead-card-action-row {
-        flex-wrap: wrap;
-    }
-    
-    .lead-card-note-section {
-        width: 100%;
-        margin-top: 8px;
     }
     
     .spacing-demo {
@@ -1717,64 +1647,6 @@ img {
     
     .license-warning {
         font-size: 0.875rem;
-    }
-    
-    .lead-card-figma {
-        width: 100%;
-        max-width: 100%;
-        padding: 16px;
-        border-radius: 12px;
-    }
-    
-    .lead-card-info-row {
-        flex-direction: column;
-        align-items: flex-start;
-        height: auto;
-        gap: 12px;
-        margin-bottom: 12px;
-    }
-    
-    .lead-card-data-chunk {
-        width: 100% !important;
-        justify-content: flex-start !important;
-    }
-    
-    .lead-card-data-01,
-    .lead-card-data-02,
-    .lead-card-data-03,
-    .lead-card-data-04 {
-        width: 100%;
-        text-align: right !important;
-    }
-    
-    .lead-card-name,
-    .lead-card-vehicle-info,
-    .lead-card-insurance-company,
-    .lead-card-insurance-type {
-        font-size: 14px;
-        line-height: 1.6;
-    }
-    
-    .lead-card-action-row {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 8px;
-    }
-    
-    .lead-card-call-to-action {
-        flex-direction: column;
-        width: 100%;
-    }
-    
-    .lead-card-call-btn,
-    .lead-card-buy-btn {
-        width: 100%;
-        min-width: auto;
-    }
-    
-    .lead-card-note-section {
-        width: 100%;
-        margin-top: 0;
     }
     
     .progress-bar-container {
@@ -2223,66 +2095,68 @@ img {
     border-top: 1px solid var(--medium-gray);
 }
 
-/* Lead Card from Figma - Exact Implementation */
+/* ============================================
+   Lead Card Component - Refined Responsive Design
+   Standard Breakpoints:
+   - Desktop: 1024px+
+   - Tablet: 768px - 1023px
+   - Mobile Large: 481px - 767px
+   - Mobile Small: 320px - 480px
+   ============================================ */
+
+/* Base Styles (Desktop First) */
 .lead-card-figma {
     width: 100%;
     max-width: 955px;
-    min-height: 148px;
+    min-height: auto;
     background: #ffffff;
-    border: 1px solid #adadad;
+    border: 1px solid #d9d9d9;
     border-radius: 16px;
-    padding: 20px 24px 24px 24px;
+    padding: 20px 24px;
     display: flex;
     flex-direction: column;
-    gap: 0;
+    gap: 16px;
     direction: rtl;
     box-sizing: border-box;
-    overflow: hidden; /* Prevent internal overflow */
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
+.lead-card-figma:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    border-color: #c2c2c2;
+}
+
+/* Info Row - Desktop: All 4 columns in one row */
 .lead-card-info-row {
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1fr auto;
     align-items: center;
-    justify-content: space-between;
-    min-height: 44px;
-    margin-bottom: 12px;
+    gap: 16px;
     direction: rtl;
-    flex-wrap: wrap;
-    gap: 8px;
 }
 
 .lead-card-data-chunk {
     display: flex;
     align-items: center;
+    min-width: 0;
 }
 
 .lead-card-data-01 {
-    flex: 1;
-    min-width: 0;
     justify-content: flex-start;
-    text-align: right;
 }
 
 .lead-card-data-02 {
-    flex: 1;
-    min-width: 0;
     justify-content: center;
-    text-align: center;
 }
 
 .lead-card-data-03 {
-    flex: 1;
-    min-width: 0;
     justify-content: center;
-    text-align: center;
 }
 
 .lead-card-data-04 {
-    flex: 1;
-    min-width: 0;
     justify-content: flex-end;
-    text-align: left;
 }
 
 .lead-card-name {
@@ -2290,80 +2164,67 @@ img {
     font-size: 16px;
     font-weight: 600;
     color: #262626;
-    line-height: 27.2px;
-    text-align: right;
+    line-height: 1.7;
     font-variation-settings: 'wght' 600;
+    white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    direction: rtl;
-    word-wrap: break-word;
 }
 
 .lead-card-vehicle-info {
     font-family: var(--font-primary);
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 500;
-    color: #262626;
-    line-height: 27.2px;
-    text-align: center;
+    color: #474747;
+    line-height: 1.7;
     font-variation-settings: 'wght' 500;
+    white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    word-wrap: break-word;
 }
 
 .lead-card-insurance-info {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 6px;
     justify-content: center;
     direction: rtl;
+    flex-wrap: nowrap;
 }
 
-.lead-card-insurance-company {
+.lead-card-insurance-company,
+.lead-card-insurance-type {
     font-family: var(--font-primary);
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 500;
-    color: #262626;
-    line-height: 27.2px;
-    text-align: right;
+    color: #474747;
+    line-height: 1.7;
     font-variation-settings: 'wght' 500;
-    direction: rtl;
+    white-space: nowrap;
 }
 
 .lead-card-divider {
-    color: #474747;
-    font-size: 16px;
-    line-height: 14px;
-}
-
-.lead-card-insurance-type {
-    font-family: var(--font-primary);
-    font-size: 16px;
-    font-weight: 500;
-    color: #262626;
-    line-height: 27.2px;
-    text-align: left;
-    font-variation-settings: 'wght' 500;
-    direction: rtl;
+    color: #adadad;
+    font-size: 14px;
+    line-height: 1;
 }
 
 .lead-card-state-holder {
     display: flex;
     align-items: center;
     gap: 8px;
-    height: 28px;
     direction: rtl;
+    flex-wrap: wrap;
+    justify-content: flex-end;
 }
 
+/* Action Row - Desktop: All elements in one row */
 .lead-card-action-row {
     display: flex;
     align-items: center;
-    gap: 24px;
-    padding-top: 12px;
+    gap: 16px;
+    padding-top: 16px;
     border-top: 1px solid #e6e6e6;
-    min-height: 52px;
-    margin-top: 8px;
     direction: rtl;
 }
 
@@ -2372,120 +2233,444 @@ img {
     align-items: center;
     gap: 8px;
     direction: rtl;
+    flex-shrink: 0;
 }
 
 .lead-card-call-btn {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
-    padding: 8px 16px;
+    gap: 8px;
+    padding: 10px 20px;
     background: #ffc453;
     border: none;
-    border-radius: 4px;
+    border-radius: 8px;
     cursor: pointer;
     font-family: var(--font-primary);
     font-size: 14px;
-    font-weight: 500;
+    font-weight: 600;
     color: #262626;
-    line-height: 23.8px;
-    font-variation-settings: 'wght' 500;
-    transition: all 0.3s ease;
-    height: 40px;
-    min-width: 120px;
-    direction: ltr;
+    line-height: 1.4;
+    font-variation-settings: 'wght' 600;
+    transition: all 0.2s ease;
+    height: 44px;
+    white-space: nowrap;
     flex-direction: row-reverse;
-    flex: 1;
-    max-width: 176px;
+}
+
+.lead-card-call-btn:hover {
+    background: #ffb833;
+    transform: translateY(-1px);
+}
+
+.lead-card-call-btn:active {
+    transform: translateY(0);
 }
 
 .lead-card-call-btn span {
     direction: ltr;
-    text-align: left;
-}
-
-.lead-card-call-btn:hover {
-    background: #FFB833;
 }
 
 .lead-card-call-btn svg {
-    width: 24px;
-    height: 24px;
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
 }
 
 .lead-card-buy-btn {
-    padding: 8px 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
     background: #ffffff;
-    border: 1px solid #c2c2c2;
-    border-radius: 4px;
+    border: 1px solid #d9d9d9;
+    border-radius: 8px;
     cursor: pointer;
     font-family: var(--font-primary);
     font-size: 14px;
-    font-weight: 500;
+    font-weight: 600;
     color: #262626;
-    line-height: 23.8px;
-    font-variation-settings: 'wght' 500;
-    transition: all 0.3s ease;
-    height: 40px;
-    min-width: 120px;
+    line-height: 1.4;
+    font-variation-settings: 'wght' 600;
+    transition: all 0.2s ease;
+    height: 44px;
     white-space: nowrap;
-    flex: 1;
-    max-width: 164px;
 }
 
 .lead-card-buy-btn:hover {
     background: #f5f5f5;
+    border-color: #c2c2c2;
 }
 
 .lead-card-note-section {
     flex: 1;
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 8px;
     padding: 0 12px;
-    background: #ffffff;
-    border: 1px solid #c2c2c2;
-    border-radius: 4px;
-    height: 40px;
+    background: #fafafa;
+    border: 1px solid #e6e6e6;
+    border-radius: 8px;
+    height: 44px;
     justify-content: flex-end;
-    min-width: 120px;
-    max-width: 100%;
+    min-width: 0;
 }
 
 .lead-card-note-edit-btn {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 40px;
-    height: 40px;
+    width: 32px;
+    height: 32px;
     background: transparent;
     border: none;
     cursor: pointer;
     padding: 0;
-    border-radius: 4px;
-    transition: background 0.3s ease;
+    border-radius: 6px;
+    transition: background 0.2s ease;
+    flex-shrink: 0;
 }
 
 .lead-card-note-edit-btn:hover {
-    background: #f5f5f5;
+    background: #e6e6e6;
 }
 
 .lead-card-note-edit-btn svg {
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
 }
 
 .lead-card-note-text {
     font-family: var(--font-primary);
     font-size: 14px;
     font-weight: 500;
-    color: #262626;
-    line-height: 23.8px;
+    color: #757575;
+    line-height: 1.4;
     font-variation-settings: 'wght' 500;
-    text-align: right;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
-/* Lead card responsive adjustments are now handled in the main responsive breakpoints above */
+/* ============================================
+   Tablet Breakpoint (768px - 1023px)
+   Info Row: 2x2 grid, Actions: single row
+   ============================================ */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .lead-card-figma {
+        padding: 18px 20px;
+        gap: 14px;
+    }
+
+    .lead-card-info-row {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
+        gap: 12px;
+    }
+
+    .lead-card-data-01 {
+        grid-column: 1;
+        grid-row: 1;
+        justify-content: flex-start;
+    }
+
+    .lead-card-data-02 {
+        grid-column: 2;
+        grid-row: 1;
+        justify-content: flex-end;
+    }
+
+    .lead-card-data-03 {
+        grid-column: 1;
+        grid-row: 2;
+        justify-content: flex-start;
+    }
+
+    .lead-card-data-04 {
+        grid-column: 2;
+        grid-row: 2;
+        justify-content: flex-end;
+    }
+
+    .lead-card-vehicle-info,
+    .lead-card-insurance-company,
+    .lead-card-insurance-type {
+        font-size: 14px;
+    }
+
+    .lead-card-action-row {
+        gap: 12px;
+    }
+
+    .lead-card-call-btn,
+    .lead-card-buy-btn {
+        padding: 8px 16px;
+        height: 42px;
+        font-size: 13px;
+    }
+
+    .lead-card-note-section {
+        height: 42px;
+    }
+}
+
+/* ============================================
+   Mobile Large Breakpoint (481px - 767px)
+   Info Row: 2x2 grid, Actions: wrap to 2 rows
+   ============================================ */
+@media screen and (min-width: 481px) and (max-width: 767px) {
+    .lead-card-figma {
+        padding: 16px;
+        gap: 12px;
+        border-radius: 12px;
+    }
+
+    .lead-card-info-row {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
+        gap: 10px;
+    }
+
+    .lead-card-data-01 {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .lead-card-data-02 {
+        grid-column: 2;
+        grid-row: 1;
+        justify-content: flex-end;
+    }
+
+    .lead-card-data-03 {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    .lead-card-data-04 {
+        grid-column: 2;
+        grid-row: 2;
+        justify-content: flex-end;
+    }
+
+    .lead-card-name {
+        font-size: 15px;
+    }
+
+    .lead-card-vehicle-info,
+    .lead-card-insurance-company,
+    .lead-card-insurance-type {
+        font-size: 13px;
+    }
+
+    .lead-card-state-holder {
+        gap: 6px;
+    }
+
+    .lead-card-state-holder .badge {
+        font-size: 12px;
+        padding: 2px 8px;
+    }
+
+    .lead-card-action-row {
+        flex-wrap: wrap;
+        gap: 10px;
+        padding-top: 12px;
+    }
+
+    .lead-card-note-section {
+        order: -1;
+        width: 100%;
+        flex: none;
+        height: 40px;
+    }
+
+    .lead-card-call-to-action {
+        width: 100%;
+        gap: 10px;
+    }
+
+    .lead-card-call-btn,
+    .lead-card-buy-btn {
+        flex: 1;
+        max-width: none;
+        height: 44px;
+        padding: 10px 14px;
+    }
+}
+
+/* ============================================
+   Mobile Small Breakpoint (320px - 480px)
+   Info Row: Single column, Actions: Stacked
+   ============================================ */
+@media screen and (max-width: 480px) {
+    .lead-card-figma {
+        padding: 14px;
+        gap: 12px;
+        border-radius: 12px;
+        max-width: 100%;
+    }
+
+    .lead-card-info-row {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+    }
+
+    .lead-card-data-chunk {
+        width: 100%;
+        justify-content: space-between;
+        padding: 6px 0;
+        border-bottom: 1px solid #f0f0f0;
+    }
+
+    .lead-card-data-chunk:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+
+    .lead-card-data-01::before {
+        content: "نام:";
+        font-size: 12px;
+        color: #757575;
+        margin-left: 8px;
+        font-weight: 400;
+    }
+
+    .lead-card-data-02::before {
+        content: "خودرو:";
+        font-size: 12px;
+        color: #757575;
+        margin-left: 8px;
+        font-weight: 400;
+    }
+
+    .lead-card-data-03::before {
+        content: "بیمه:";
+        font-size: 12px;
+        color: #757575;
+        margin-left: 8px;
+        font-weight: 400;
+    }
+
+    .lead-card-data-04 {
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        gap: 6px;
+    }
+
+    .lead-card-data-04::before {
+        content: "وضعیت:";
+        font-size: 12px;
+        color: #757575;
+        margin-left: 8px;
+        font-weight: 400;
+    }
+
+    .lead-card-name {
+        font-size: 14px;
+    }
+
+    .lead-card-vehicle-info {
+        font-size: 13px;
+        text-align: right;
+    }
+
+    .lead-card-insurance-info {
+        justify-content: flex-start;
+        gap: 4px;
+    }
+
+    .lead-card-insurance-company,
+    .lead-card-insurance-type {
+        font-size: 13px;
+    }
+
+    .lead-card-divider {
+        font-size: 12px;
+    }
+
+    .lead-card-state-holder {
+        justify-content: flex-start;
+        gap: 6px;
+    }
+
+    .lead-card-state-holder .badge {
+        font-size: 11px;
+        padding: 2px 6px;
+    }
+
+    .lead-card-action-row {
+        flex-direction: column;
+        gap: 10px;
+        padding-top: 12px;
+    }
+
+    .lead-card-note-section {
+        width: 100%;
+        height: 44px;
+        order: 3;
+    }
+
+    .lead-card-call-to-action {
+        width: 100%;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .lead-card-call-btn,
+    .lead-card-buy-btn {
+        width: 100%;
+        max-width: none;
+        height: 48px;
+        font-size: 14px;
+        border-radius: 10px;
+    }
+
+    .lead-card-call-btn {
+        order: 1;
+    }
+
+    .lead-card-buy-btn {
+        order: 2;
+    }
+}
+
+/* ============================================
+   Extra Small Devices (< 320px)
+   ============================================ */
+@media screen and (max-width: 319px) {
+    .lead-card-figma {
+        padding: 12px;
+        border-radius: 10px;
+    }
+
+    .lead-card-data-chunk::before {
+        display: none;
+    }
+
+    .lead-card-name {
+        font-size: 13px;
+    }
+
+    .lead-card-vehicle-info,
+    .lead-card-insurance-company,
+    .lead-card-insurance-type {
+        font-size: 12px;
+    }
+
+    .lead-card-call-btn,
+    .lead-card-buy-btn {
+        height: 44px;
+        font-size: 13px;
+    }
+
+    .lead-card-call-btn svg {
+        width: 18px;
+        height: 18px;
+    }
+}
 
 /* Progress Bar */
 .progress-bar-container {
