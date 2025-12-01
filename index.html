@@ -4,39 +4,73 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>راهنمای برند - پلتفرم شرکای بیمه بازار</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="راهنمای کامل برند پلتفرم شرکای بیمه بازار شامل لوگو، پالت رنگ، تایپوگرافی، کامپوننت‌ها و دستورالعمل‌های استفاده از برند">
+    <meta name="keywords" content="برند بوک, راهنمای برند, بیمه بازار, سلر, شرکا, لوگو, پالت رنگ, تایپوگرافی, دانا">
+    <meta name="author" content="پلتفرم شرکای بیمه بازار">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#F1BE1A">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mrsadri.github.io/seller-brandbook/">
+    <meta property="og:title" content="راهنمای برند - پلتفرم شرکای بیمه بازار">
+    <meta property="og:description" content="راهنمای کامل برند پلتفرم شرکای بیمه بازار شامل لوگو، پالت رنگ، تایپوگرافی و دستورالعمل‌های برند">
+    <meta property="og:image" content="https://mrsadri.github.io/seller-brandbook/assets/images/logos/Container.svg">
+    <meta property="og:locale" content="fa_IR">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="راهنمای برند - پلتفرم شرکای بیمه بازار">
+    <meta name="twitter:description" content="راهنمای کامل برند پلتفرم شرکای بیمه بازار شامل لوگو، پالت رنگ، تایپوگرافی و دستورالعمل‌های برند">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://mrsadri.github.io/seller-brandbook/">
+    
+    <!-- Favicons -->
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    
+    <!-- Stylesheet -->
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="main-nav" id="mainNav">
+    <nav class="main-nav" id="mainNav" role="navigation" aria-label="Main navigation">
         <div class="container">
             <div class="nav-content">
                 <div class="nav-logo">
-                    <a href="#home" class="logo-link">
+                    <a href="#home" class="logo-link" aria-label="Go to homepage">
                         <span class="logo-text">شرکا</span>
                     </a>
                 </div>
-                <ul class="nav-menu" id="navMenu">
-                    <li><a href="#logo" class="nav-link">لوگو</a></li>
-                    <li><a href="#colors" class="nav-link">رنگ‌ها</a></li>
-                    <li><a href="#typography" class="nav-link">تایپوگرافی</a></li>
-                    <li><a href="#components" class="nav-link">کامپوننت‌ها</a></li>
-                    <li><a href="#spacing" class="nav-link">فاصله‌گذاری</a></li>
-                    <li><a href="#guidelines" class="nav-link">دستورالعمل‌ها</a></li>
-                </ul>
-                <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+                <button 
+                    class="nav-toggle" 
+                    id="navToggle" 
+                    type="button"
+                    aria-label="Toggle navigation menu"
+                    aria-expanded="false"
+                    aria-controls="navMenu"
+                    aria-haspopup="true">
+                    <span class="nav-toggle-line"></span>
+                    <span class="nav-toggle-line"></span>
+                    <span class="nav-toggle-line"></span>
                 </button>
+                <ul class="nav-menu" id="navMenu" role="menubar">
+                    <li role="none"><a href="#logo" class="nav-link" role="menuitem">لوگو</a></li>
+                    <li role="none"><a href="#colors" class="nav-link" role="menuitem">رنگ‌ها</a></li>
+                    <li role="none"><a href="#typography" class="nav-link" role="menuitem">تایپوگرافی</a></li>
+                    <li role="none"><a href="#components" class="nav-link" role="menuitem">کامپوننت‌ها</a></li>
+                    <li role="none"><a href="#spacing" class="nav-link" role="menuitem">فاصله‌گذاری</a></li>
+                    <li role="none"><a href="#guidelines" class="nav-link" role="menuitem">دستورالعمل‌ها</a></li>
+                </ul>
             </div>
         </div>
-        <div class="nav-backdrop" id="navBackdrop"></div>
+        <div class="nav-backdrop" id="navBackdrop" aria-hidden="true"></div>
     </nav>
 
     <!-- Hero Section -->
@@ -577,31 +611,59 @@
         
         function toggleMobileMenu() {
             const isActive = navMenu.classList.contains('active');
+            const newState = !isActive;
+            
             navMenu.classList.toggle('active');
             navToggle.classList.toggle('active');
+            
+            // Update ARIA attributes
+            navToggle.setAttribute('aria-expanded', newState);
             if (navBackdrop) {
+                navBackdrop.setAttribute('aria-hidden', !newState);
                 navBackdrop.classList.toggle('active');
             }
+            
             // Prevent body scroll when menu is open
-            document.body.style.overflow = isActive ? '' : 'hidden';
+            document.body.style.overflow = newState ? 'hidden' : '';
+            
+            // Focus management for accessibility
+            if (newState && navMenu) {
+                // Focus first menu item when opening
+                const firstLink = navMenu.querySelector('.nav-link');
+                if (firstLink) {
+                    setTimeout(() => firstLink.focus(), 100);
+                }
+            }
+        }
+        
+        function closeMobileMenu() {
+            navMenu.classList.remove('active');
+            navToggle.classList.remove('active');
+            navToggle.setAttribute('aria-expanded', 'false');
+            if (navBackdrop) {
+                navBackdrop.classList.remove('active');
+                navBackdrop.setAttribute('aria-hidden', 'true');
+            }
+            document.body.style.overflow = '';
         }
         
         navToggle.addEventListener('click', toggleMobileMenu);
         
         if (navBackdrop) {
-            navBackdrop.addEventListener('click', toggleMobileMenu);
+            navBackdrop.addEventListener('click', closeMobileMenu);
         }
 
         // Close mobile menu when clicking on a link
         navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                navMenu.classList.remove('active');
-                navToggle.classList.remove('active');
-                if (navBackdrop) {
-                    navBackdrop.classList.remove('active');
-                }
-                document.body.style.overflow = '';
-            });
+            link.addEventListener('click', closeMobileMenu);
+        });
+        
+        // Close menu on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+                closeMobileMenu();
+                navToggle.focus();
+            }
         });
     </script>
 </body>

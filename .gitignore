@@ -1,4 +1,4 @@
-# OS Files
+# OS generated files
 .DS_Store
 .DS_Store?
 ._*
@@ -7,17 +7,44 @@
 ehthumbs.db
 Thumbs.db
 
-# Editor Files
-.vscode/
+# IDE and editor files
 .idea/
+.vscode/
 *.swp
 *.swo
 *~
+.project
+.settings/
 
-# Logs
+# Build and dependency directories
+node_modules/
+bower_components/
+vendor/
+
+# Log files
 *.log
 npm-debug.log*
 
-# Screenshots (keep the existing one)
-# Screenshot 2025-11-30 at 12.48.14.png
+# Temporary files
+*.tmp
+*.temp
+.cache/
 
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Compiled files
+*.min.css
+*.min.js
+
+# Test coverage
+coverage/
+
+# Debug files
+*.md.bak
+LAYOUT_ISSUES.md
+LOCAL_NAVBAR_375px_EXPECTED.md
+NAVBAR_COMPARISON_375px.md
+PRODUCTION_VS_LOCAL_COMPARISON.md
