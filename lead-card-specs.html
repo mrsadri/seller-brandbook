@@ -702,26 +702,323 @@
                 <section class="specs-section" id="status">
                     <h2 class="specs-section-title">وضعیت‌ها</h2>
                     
-                    <div class="status-list">
-                        <div class="status-item">
-                            <span class="status-dot available"></span>
-                            <span><code>available</code> - آماده اختصاص</span>
+                    <p style="font-size: 16px; line-height: 28px; color: var(--specs-on-surface-variant); margin-bottom: 24px;">
+                        هر کارت لید بسته به وضعیتش، عناصر متفاوتی دارد. در ادامه هر وضعیت و دلیل نمایش یا عدم نمایش هر عنصر توضیح داده شده است.
+                    </p>
+
+                    <!-- Available Lead -->
+                    <div class="specs-card" style="margin-bottom: 32px;">
+                        <div class="specs-card-header" style="background: #f2fbf5; border-bottom-color: #2b8c52;">
+                            <div style="display: flex; align-items: center; gap: 12px;">
+                                <span class="status-dot available"></span>
+                                <h3 class="specs-card-title">لید آماده (Available)</h3>
+                            </div>
                         </div>
-                        <div class="status-item">
-                            <span class="status-dot inProgress"></span>
-                            <span><code>inProgress</code> - در حال پیگیری</span>
+                        <div class="specs-card-body">
+                            <p style="color: var(--specs-on-surface-variant); margin-bottom: 16px;">
+                                کارتی که هنوز توسط کاربر انتخاب نشده و اطلاعات تماس مشتری به او نمایش داده نشده است.
+                            </p>
+                            <table class="specs-table">
+                                <thead>
+                                    <tr>
+                                        <th>عنصر</th>
+                                        <th>وضعیت</th>
+                                        <th>دلیل</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>اطلاعات مشتری</td>
+                                        <td><span style="color: #2b8c52;">✓ نمایش</span></td>
+                                        <td>نام، خودرو و بیمه برای تصمیم‌گیری کاربر لازم است</td>
+                                    </tr>
+                                    <tr>
+                                        <td>برچسب روز تا انقضا</td>
+                                        <td><span style="color: #2b8c52;">✓ نمایش</span></td>
+                                        <td>کاربر باید فوریت کارت را بداند</td>
+                                    </tr>
+                                    <tr>
+                                        <td>دکمه دریافت اطلاعات تماس</td>
+                                        <td><span style="color: #2b8c52;">✓ نمایش</span></td>
+                                        <td>اقدام اصلی برای شروع پیگیری</td>
+                                    </tr>
+                                    <tr>
+                                        <td>شماره تماس</td>
+                                        <td><span style="color: #dc2626;">✗ پنهان</span></td>
+                                        <td>هنوز لید انتخاب نشده</td>
+                                    </tr>
+                                    <tr>
+                                        <td>یادداشت</td>
+                                        <td><span style="color: #dc2626;">✗ پنهان</span></td>
+                                        <td>کاربر هنوز با مشتری تماس نگرفته و نظری ندارد</td>
+                                    </tr>
+                                    <tr>
+                                        <td>دکمه خرید بیمه</td>
+                                        <td><span style="color: #dc2626;">✗ پنهان</span></td>
+                                        <td>ابتدا باید اطلاعات تماس دریافت شود</td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
-                        <div class="status-item">
-                            <span class="status-dot denied"></span>
-                            <span><code>denied</code> - رد شده توسط مشتری</span>
+                    </div>
+
+                    <!-- inProgress Lead -->
+                    <div class="specs-card" style="margin-bottom: 32px;">
+                        <div class="specs-card-header" style="background: #eef9ff; border-bottom-color: #1a73e8;">
+                            <div style="display: flex; align-items: center; gap: 12px;">
+                                <span class="status-dot inProgress"></span>
+                                <h3 class="specs-card-title">در حال پیگیری (In Progress)</h3>
+                            </div>
                         </div>
-                        <div class="status-item">
-                            <span class="status-dot converted"></span>
-                            <span><code>converted</code> - تمدید شده</span>
+                        <div class="specs-card-body">
+                            <p style="color: var(--specs-on-surface-variant); margin-bottom: 16px;">
+                                کارتی که کاربر آن را انتخاب کرده و اطلاعات تماس را دریافت کرده است. در حال پیگیری برای تمدید بیمه است.
+                            </p>
+                            <table class="specs-table">
+                                <thead>
+                                    <tr>
+                                        <th>عنصر</th>
+                                        <th>وضعیت</th>
+                                        <th>دلیل</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>اطلاعات مشتری</td>
+                                        <td><span style="color: #2b8c52;">✓ نمایش</span></td>
+                                        <td>برای شناسایی مشتری</td>
+                                    </tr>
+                                    <tr>
+                                        <td>شماره تماس</td>
+                                        <td><span style="color: #2b8c52;">✓ نمایش</span></td>
+                                        <td>کاربر باید بتواند با مشتری تماس بگیرد</td>
+                                    </tr>
+                                    <tr>
+                                        <td>دکمه خرید بیمه</td>
+                                        <td><span style="color: #2b8c52;">✓ نمایش</span></td>
+                                        <td>امکان ثبت خرید بیمه برای مشتری</td>
+                                    </tr>
+                                    <tr>
+                                        <td>یادداشت</td>
+                                        <td><span style="color: #2b8c52;">✓ نمایش</span></td>
+                                        <td>کاربر می‌تواند نتیجه تماس را ثبت کند</td>
+                                    </tr>
+                                    <tr>
+                                        <td>برچسب روز تا انقضا</td>
+                                        <td><span style="color: #2b8c52;">✓ نمایش</span></td>
+                                        <td>یادآوری فوریت پیگیری</td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
-                        <div class="status-item">
-                            <span class="status-dot rejected"></span>
-                            <span><code>rejected</code> - رد شده توسط سیستم</span>
+                    </div>
+
+                    <!-- Denied Lead -->
+                    <div class="specs-card" style="margin-bottom: 32px;">
+                        <div class="specs-card-header" style="background: #fff9eb; border-bottom-color: #94300c;">
+                            <div style="display: flex; align-items: center; gap: 12px;">
+                                <span class="status-dot denied"></span>
+                                <h3 class="specs-card-title">رد شده توسط مشتری (Denied)</h3>
+                            </div>
+                        </div>
+                        <div class="specs-card-body">
+                            <p style="color: var(--specs-on-surface-variant); margin-bottom: 16px;">
+                                کارتی که مشتری تمایلی به تمدید بیمه از طریق این کاربر نداشته است.
+                            </p>
+                            <table class="specs-table">
+                                <thead>
+                                    <tr>
+                                        <th>عنصر</th>
+                                        <th>وضعیت</th>
+                                        <th>دلیل</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>اطلاعات مشتری</td>
+                                        <td><span style="color: #2b8c52;">✓ نمایش</span></td>
+                                        <td>برای شناسایی و مرور سوابق</td>
+                                    </tr>
+                                    <tr>
+                                        <td>یادداشت + زمان</td>
+                                        <td><span style="color: #2b8c52;">✓ نمایش</span></td>
+                                        <td>ثبت دلیل رد شدن برای مرور بعدی</td>
+                                    </tr>
+                                    <tr>
+                                        <td>شماره تماس</td>
+                                        <td><span style="color: #dc2626;">✗ پنهان</span></td>
+                                        <td>نیازی به تماس مجدد نیست</td>
+                                    </tr>
+                                    <tr>
+                                        <td>دکمه خرید بیمه</td>
+                                        <td><span style="color: #dc2626;">✗ پنهان</span></td>
+                                        <td>مشتری قصد خرید ندارد</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Converted Lead -->
+                    <div class="specs-card" style="margin-bottom: 32px;">
+                        <div class="specs-card-header" style="background: #f5f5f5; border-bottom-color: #666666;">
+                            <div style="display: flex; align-items: center; gap: 12px;">
+                                <span class="status-dot converted"></span>
+                                <h3 class="specs-card-title">تمدید شده (Converted)</h3>
+                            </div>
+                        </div>
+                        <div class="specs-card-body">
+                            <p style="color: var(--specs-on-surface-variant); margin-bottom: 16px;">
+                                کارتی که فروش موفق داشته و بیمه توسط کاربر تمدید شده است. همچنین کارت‌هایی که sortKey آن‌ها بیش از ۳۰ باشد (خیلی قدیمی یا خیلی دور) در این وضعیت قرار می‌گیرند.
+                            </p>
+                            <table class="specs-table">
+                                <thead>
+                                    <tr>
+                                        <th>عنصر</th>
+                                        <th>وضعیت</th>
+                                        <th>دلیل</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>اطلاعات مشتری</td>
+                                        <td><span style="color: #2b8c52;">✓ نمایش</span></td>
+                                        <td>فقط برای نمایش سابقه</td>
+                                    </tr>
+                                    <tr>
+                                        <td>برچسب «تمدید شده توسط شما»</td>
+                                        <td><span style="color: #2b8c52;">✓ نمایش</span></td>
+                                        <td>نشان‌دهنده موفقیت</td>
+                                    </tr>
+                                    <tr>
+                                        <td>ردیف اقدامات (Action Row)</td>
+                                        <td><span style="color: #dc2626;">✗ حذف کامل</span></td>
+                                        <td>فروش انجام شده و نیازی به اقدام نیست</td>
+                                    </tr>
+                                    <tr>
+                                        <td>شماره تماس</td>
+                                        <td><span style="color: #dc2626;">✗ پنهان</span></td>
+                                        <td>نیازی به تماس نیست</td>
+                                    </tr>
+                                    <tr>
+                                        <td>یادداشت</td>
+                                        <td><span style="color: #dc2626;">✗ پنهان</span></td>
+                                        <td>کار تمام شده</td>
+                                    </tr>
+                                    <tr>
+                                        <td>دکمه خرید بیمه</td>
+                                        <td><span style="color: #dc2626;">✗ پنهان</span></td>
+                                        <td>تمدید منطقی نیست چون یا انجام شده یا خیلی قدیمی است</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="specs-info" style="margin-top: 16px;">
+                                <h4 class="specs-info-title">چرا ارتفاع کارت کمتر است؟</h4>
+                                <p>
+                                    چون ردیف اقدامات (Action Row) کاملاً حذف شده، کارت فقط شامل ردیف اطلاعات است و ارتفاع کمتری دارد.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Rejected Lead -->
+                    <div class="specs-card" style="margin-bottom: 32px;">
+                        <div class="specs-card-header" style="background: #fef2f2; border-bottom-color: #dc2626;">
+                            <div style="display: flex; align-items: center; gap: 12px;">
+                                <span class="status-dot rejected"></span>
+                                <h3 class="specs-card-title">رد شده توسط سیستم (Rejected)</h3>
+                            </div>
+                        </div>
+                        <div class="specs-card-body">
+                            <p style="color: var(--specs-on-surface-variant); margin-bottom: 16px;">
+                                کارتی که به دلایل سیستمی امکان خرید بیمه برای آن وجود ندارد (مثلاً مشکل در اطلاعات خودرو یا بیمه).
+                            </p>
+                            <table class="specs-table">
+                                <thead>
+                                    <tr>
+                                        <th>عنصر</th>
+                                        <th>وضعیت</th>
+                                        <th>دلیل</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>اطلاعات مشتری</td>
+                                        <td><span style="color: #2b8c52;">✓ نمایش</span></td>
+                                        <td>برای اطلاع کاربر</td>
+                                    </tr>
+                                    <tr>
+                                        <td>پیام سیستم</td>
+                                        <td><span style="color: #2b8c52;">✓ نمایش</span></td>
+                                        <td>توضیح دلیل رد شدن (غیرقابل ویرایش)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>شماره تماس</td>
+                                        <td><span style="color: #dc2626;">✗ پنهان</span></td>
+                                        <td>امکان پیگیری وجود ندارد</td>
+                                    </tr>
+                                    <tr>
+                                        <td>دکمه خرید بیمه</td>
+                                        <td><span style="color: #dc2626;">✗ پنهان</span></td>
+                                        <td>خرید امکان‌پذیر نیست</td>
+                                    </tr>
+                                    <tr>
+                                        <td>دکمه ویرایش یادداشت</td>
+                                        <td><span style="color: #dc2626;">✗ پنهان</span></td>
+                                        <td>پیام سیستمی است و قابل ویرایش نیست</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- +10 Days to Expire -->
+                    <div class="specs-card">
+                        <div class="specs-card-header" style="background: #f5f5f5; border-bottom-color: #666666;">
+                            <div style="display: flex; align-items: center; gap: 12px;">
+                                <h3 class="specs-card-title">بیش از ۳۰ روز تا انقضا</h3>
+                            </div>
+                        </div>
+                        <div class="specs-card-body">
+                            <p style="color: var(--specs-on-surface-variant); margin-bottom: 16px;">
+                                کارتی که زمان زیادی تا انقضای بیمه دارد و هنوز زود است برای پیگیری.
+                            </p>
+                            <table class="specs-table">
+                                <thead>
+                                    <tr>
+                                        <th>عنصر</th>
+                                        <th>وضعیت</th>
+                                        <th>دلیل</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>اطلاعات مشتری</td>
+                                        <td><span style="color: #2b8c52;">✓ نمایش</span></td>
+                                        <td>برای آگاهی از لیدهای آینده</td>
+                                    </tr>
+                                    <tr>
+                                        <td>برچسب «بیش از ۳۰ روز تا انقضا»</td>
+                                        <td><span style="color: #2b8c52;">✓ نمایش</span></td>
+                                        <td>نشان‌دهنده زمان‌بندی</td>
+                                    </tr>
+                                    <tr>
+                                        <td>یادداشت سیستم</td>
+                                        <td><span style="color: #2b8c52;">✓ نمایش</span></td>
+                                        <td>راهنمایی برای کاربر (غیرقابل ویرایش)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>شماره تماس</td>
+                                        <td><span style="color: #dc2626;">✗ پنهان</span></td>
+                                        <td>زود است برای تماس</td>
+                                    </tr>
+                                    <tr>
+                                        <td>دکمه خرید بیمه</td>
+                                        <td><span style="color: #dc2626;">✗ پنهان</span></td>
+                                        <td>زود است برای خرید</td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </section>
