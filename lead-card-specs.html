@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مشخصات کارت لید - راهنمای برند</title>
+    
+    <meta name="description" content="مشخصات کامل کامپوننت کارت لید">
+    <meta name="theme-color" content="#F1BE1A">
+    
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <style>
+        :root {
+            --specs-bg: #FAFAFA;
+            --specs-surface: #FFFFFF;
+            --specs-outline: #E0E0E0;
+            --specs-primary: #F1BE1A;
+            --specs-on-surface: #1D1B20;
+            --specs-on-surface-variant: #49454F;
+            --specs-purple: #6750A4;
+            --specs-purple-light: #E8DEF8;
+        }
+        
+        body {
+            background: var(--specs-bg);
+        }
+        
+        .specs-page {
+            padding-top: 80px;
+        }
+        
+        .specs-hero {
+            background: linear-gradient(135deg, var(--brand-yellow) 0%, #E5A800 100%);
+            padding: 80px 0 60px;
+            margin-bottom: 0;
+        }
+        
+        .specs-hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        
+        .specs-breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 24px;
+            font-size: 14px;
+        }
+        
+        .specs-breadcrumb a {
+            color: rgba(0,0,0,0.7);
+            text-decoration: none;
+        }
+        
+        .specs-breadcrumb a:hover {
+            text-decoration: underline;
+        }
+        
+        .specs-breadcrumb span {
+            color: rgba(0,0,0,0.5);
+        }
+        
+        .specs-hero h1 {
+            font-size: 57px;
+            font-weight: 400;
+            line-height: 64px;
+            letter-spacing: -0.25px;
+            margin: 0 0 16px;
+            color: var(--charcoal-black);
+        }
+        
+        .specs-hero p {
+            font-size: 16px;
+            line-height: 24px;
+            color: rgba(0,0,0,0.7);
+            max-width: 600px;
+        }
+        
+        .specs-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px 80px;
+        }
+        
+        .specs-grid {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 48px;
+            margin-top: 48px;
+        }
+        
+        .specs-nav {
+            position: sticky;
+            top: 100px;
+            height: fit-content;
+        }
+        
+        .specs-nav-title {
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            color: var(--specs-on-surface-variant);
+            margin-bottom: 16px;
+        }
+        
+        .specs-nav-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .specs-nav-list li {
+            margin-bottom: 4px;
+        }
+        
+        .specs-nav-list a {
+            display: block;
+            padding: 8px 16px;
+            color: var(--specs-on-surface-variant);
+            text-decoration: none;
+            font-size: 14px;
+            border-radius: 100px;
+            transition: all 0.2s;
+        }
+        
+        .specs-nav-list a:hover {
+            background: var(--specs-outline);
+        }
+        
+        .specs-nav-list a.active {
+            background: var(--brand-yellow-light);
+            color: var(--charcoal-black);
+            font-weight: 500;
+        }
+        
+        .specs-main {
+            min-width: 0;
+        }
+        
+        .specs-section {
+            margin-bottom: 64px;
+            scroll-margin-top: 100px;
+        }
+        
+        .specs-section-title {
+            font-size: 28px;
+            font-weight: 400;
+            line-height: 36px;
+            color: var(--specs-on-surface);
+            margin: 0 0 24px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--specs-outline);
+        }
+        
+        .specs-card {
+            background: var(--specs-surface);
+            border-radius: 16px;
+            border: 1px solid var(--specs-outline);
+            overflow: hidden;
+            margin-bottom: 24px;
+        }
+        
+        .specs-card-header {
+            padding: 24px;
+            border-bottom: 1px solid var(--specs-outline);
+        }
+        
+        .specs-card-title {
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--specs-on-surface);
+            margin: 0;
+        }
+        
+        .specs-card-body {
+            padding: 24px;
+        }
+        
+        /* Anatomy Diagram */
+        .anatomy-container {
+            background: var(--specs-purple-light);
+            border-radius: 16px;
+            padding: 48px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 32px;
+            position: relative;
+        }
+        
+        .anatomy-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 900px;
+        }
+        
+        .anatomy-card {
+            background: #ffffff;
+            border: 1px solid #d9d9d9;
+            border-radius: 16px;
+            padding: 20px 24px;
+            direction: rtl;
+        }
+        
+        .anatomy-info-row {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr 1fr auto;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+        
+        .anatomy-name {
+            font-family: var(--font-primary);
+            font-size: 16px;
+            font-weight: 600;
+            color: #262626;
+        }
+        
+        .anatomy-vehicle {
+            font-family: var(--font-primary);
+            font-size: 15px;
+            font-weight: 500;
+            color: #474747;
+            text-align: center;
+        }
+        
+        .anatomy-insurance {
+            font-family: var(--font-primary);
+            font-size: 15px;
+            font-weight: 500;
+            color: #474747;
+            text-align: center;
+        }
+        
+        .anatomy-badges {
+            display: flex;
+            gap: 8px;
+        }
+        
+        .anatomy-badge {
+            padding: 2px 12px;
+            border-radius: 12px;
+            font-size: 14px;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+        
+        .anatomy-badge.warning {
+            background: #fff9eb;
+            color: #94300c;
+            border: 1px solid #94300c;
+        }
+        
+        .anatomy-badge.success {
+            background: #f2fbf5;
+            color: #2b8c52;
+            border: 1px solid #2b8c52;
+        }
+        
+        .anatomy-action-row {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding-top: 16px;
+            border-top: 1px solid #e6e6e6;
+        }
+        
+        .anatomy-note {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 0 12px;
+            background: #fafafa;
+            border: 1px solid #e6e6e6;
+            border-radius: 8px;
+            height: 44px;
+            justify-content: flex-end;
+        }
+        
+        .anatomy-note-text {
+            font-size: 14px;
+            color: #757575;
+        }
+        
+        .anatomy-cta {
+            display: flex;
+            gap: 8px;
+        }
+        
+        .anatomy-btn {
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        
+        .anatomy-btn.primary {
+            background: #ffc453;
+            color: #262626;
+            border: none;
+        }
+        
+        .anatomy-btn.secondary {
+            background: #ffffff;
+            color: #262626;
+            border: 1px solid #d9d9d9;
+        }
+        
+        /* Annotation Points */
+        .annotation {
+            position: absolute;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            color: var(--specs-on-surface-variant);
+        }
+        
+        .annotation-number {
+            width: 28px;
+            height: 28px;
+            background: var(--charcoal-black);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        
+        .annotation-line {
+            border-top: 1px dashed var(--specs-on-surface-variant);
+            width: 40px;
+        }
+        
+        .annotation.top { flex-direction: column; }
+        .annotation.bottom { flex-direction: column-reverse; }
+        .annotation.left { flex-direction: row-reverse; }
+        .annotation.right { flex-direction: row; }
+        
+        .annotation.top .annotation-line,
+        .annotation.bottom .annotation-line {
+            border-top: none;
+            border-right: 1px dashed var(--specs-on-surface-variant);
+            width: 1px;
+            height: 40px;
+        }
+        
+        /* Specs Table */
+        .specs-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .specs-table th {
+            text-align: right;
+            padding: 16px;
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            color: var(--specs-on-surface-variant);
+            background: var(--specs-bg);
+            border-bottom: 1px solid var(--specs-outline);
+        }
+        
+        .specs-table td {
+            padding: 16px;
+            font-size: 14px;
+            color: var(--specs-on-surface);
+            border-bottom: 1px solid var(--specs-outline);
+            vertical-align: top;
+        }
+        
+        .specs-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .specs-table code {
+            background: var(--specs-bg);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+            direction: ltr;
+            display: inline-block;
+        }
+        
+        /* Info Blocks */
+        .specs-info {
+            background: var(--specs-bg);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 16px 0;
+        }
+        
+        .specs-info-title {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--specs-on-surface);
+            margin: 0 0 8px;
+        }
+        
+        .specs-info p {
+            font-size: 14px;
+            line-height: 22px;
+            color: var(--specs-on-surface-variant);
+            margin: 0;
+        }
+        
+        .specs-formula {
+            background: var(--charcoal-black);
+            color: white;
+            padding: 20px 24px;
+            border-radius: 12px;
+            font-family: 'Courier New', monospace;
+            font-size: 16px;
+            text-align: center;
+            direction: ltr;
+            margin: 16px 0;
+        }
+        
+        /* Status Pills */
+        .status-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin: 16px 0;
+        }
+        
+        .status-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            background: var(--specs-bg);
+            border-radius: 100px;
+            font-size: 14px;
+        }
+        
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+        }
+        
+        .status-dot.available { background: #2b8c52; }
+        .status-dot.inProgress { background: #1a73e8; }
+        .status-dot.denied { background: #94300c; }
+        .status-dot.converted { background: #666666; }
+        .status-dot.rejected { background: #dc2626; }
+        
+        /* Timeline Display */
+        .time-display {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin: 16px 0;
+        }
+        
+        .time-item {
+            background: var(--specs-bg);
+            border-radius: 12px;
+            padding: 16px;
+        }
+        
+        .time-range {
+            font-size: 12px;
+            color: var(--specs-on-surface-variant);
+            margin-bottom: 4px;
+        }
+        
+        .time-output {
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--specs-on-surface);
+        }
+        
+        @media (max-width: 900px) {
+            .specs-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .specs-nav {
+                display: none;
+            }
+            
+            .specs-hero h1 {
+                font-size: 36px;
+                line-height: 44px;
+            }
+            
+            .anatomy-container {
+                padding: 24px;
+                overflow-x: auto;
+            }
+            
+            .anatomy-info-row {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+            
+            .annotation {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="main-nav" id="mainNav">
+        <div class="container">
+            <div class="nav-content">
+                <div class="nav-logo">
+                    <a href="index.html" class="logo-link">
+                        <span class="logo-text">شرکا</span>
+                    </a>
+                </div>
+                <button class="nav-toggle" id="navToggle" type="button" aria-label="Toggle navigation menu" aria-expanded="false">
+                    <span class="nav-toggle-line"></span>
+                    <span class="nav-toggle-line"></span>
+                    <span class="nav-toggle-line"></span>
+                </button>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html#logo" class="nav-link">لوگو</a></li>
+                    <li><a href="index.html#colors" class="nav-link">رنگ‌ها</a></li>
+                    <li><a href="index.html#typography" class="nav-link">تایپوگرافی</a></li>
+                    <li><a href="index.html#components" class="nav-link active">کامپوننت‌ها</a></li>
+                    <li><a href="index.html#spacing" class="nav-link">فاصله‌گذاری</a></li>
+                    <li><a href="index.html#guidelines" class="nav-link">دستورالعمل‌ها</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="nav-backdrop" id="navBackdrop"></div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="specs-hero specs-page">
+        <div class="specs-hero-content">
+            <nav class="specs-breadcrumb">
+                <a href="index.html">راهنمای برند</a>
+                <span>›</span>
+                <a href="index.html#components">کامپوننت‌ها</a>
+                <span>›</span>
+                <span>کارت لید</span>
+            </nav>
+            <h1>کارت لید</h1>
+            <p>کارت لید برای نمایش اطلاعات مشتریان پیشنهادی در پنل شریک استفاده می‌شود و شامل اطلاعات مشتری، خودرو، بیمه و اقدامات ممکن است.</p>
+        </div>
+    </header>
+
+    <!-- Content -->
+    <div class="specs-container">
+        <div class="specs-grid">
+            <!-- Side Nav -->
+            <aside class="specs-nav">
+                <div class="specs-nav-title">در این صفحه</div>
+                <ul class="specs-nav-list">
+                    <li><a href="#anatomy" class="active">آناتومی</a></li>
+                    <li><a href="#data">اطلاعات کارت</a></li>
+                    <li><a href="#status">وضعیت‌ها</a></li>
+                    <li><a href="#sorting">ترتیب نمایش</a></li>
+                    <li><a href="#time-display">نمایش زمان</a></li>
+                    <li><a href="#expiration">روزهای تا انقضا</a></li>
+                </ul>
+            </aside>
+
+            <!-- Main Content -->
+            <main class="specs-main">
+                <!-- Anatomy -->
+                <section class="specs-section" id="anatomy">
+                    <h2 class="specs-section-title">آناتومی</h2>
+                    
+                    <div class="anatomy-container">
+                        <div class="anatomy-wrapper">
+                            <!-- Annotation 1 - Name -->
+                            <div class="annotation right" style="top: 60px; right: -80px;">
+                                <div class="annotation-number">۱</div>
+                                <div class="annotation-line"></div>
+                            </div>
+                            
+                            <!-- Annotation 2 - Vehicle -->
+                            <div class="annotation top" style="top: -60px; right: 35%;">
+                                <div class="annotation-number">۲</div>
+                                <div class="annotation-line"></div>
+                            </div>
+                            
+                            <!-- Annotation 3 - Insurance -->
+                            <div class="annotation top" style="top: -60px; right: 55%;">
+                                <div class="annotation-number">۳</div>
+                                <div class="annotation-line"></div>
+                            </div>
+                            
+                            <!-- Annotation 4 - Badges -->
+                            <div class="annotation left" style="top: 60px; left: -80px;">
+                                <div class="annotation-number">۴</div>
+                                <div class="annotation-line"></div>
+                            </div>
+                            
+                            <!-- Annotation 5 - Note -->
+                            <div class="annotation right" style="bottom: 50px; right: -80px;">
+                                <div class="annotation-number">۵</div>
+                                <div class="annotation-line"></div>
+                            </div>
+                            
+                            <!-- Annotation 6 - CTA -->
+                            <div class="annotation left" style="bottom: 50px; left: -80px;">
+                                <div class="annotation-number">۶</div>
+                                <div class="annotation-line"></div>
+                            </div>
+                            
+                            <!-- Card -->
+                            <div class="anatomy-card">
+                                <div class="anatomy-info-row">
+                                    <div class="anatomy-name">پریا نیک‌روش</div>
+                                    <div class="anatomy-vehicle">سمند EF7 | ۱۳۹۹</div>
+                                    <div class="anatomy-insurance">کارگران آسیا | شخص ثالث</div>
+                                    <div class="anatomy-badges">
+                                        <span class="anatomy-badge warning">۸ روز تا انقضاء</span>
+                                        <span class="anatomy-badge success">نقدی</span>
+                                    </div>
+                                </div>
+                                <div class="anatomy-action-row">
+                                    <div class="anatomy-note">
+                                        <span class="anatomy-note-text">افزودن یادداشت</span>
+                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                            <path d="M11.05 3L4.208 10.242c-.258.275-.508.817-.558 1.192l-.308 2.7c-.109.975.591 1.641 1.558 1.474l2.683-.458c.375-.067.9-.342 1.158-.625L15.583 7.283c1.184-1.25 1.717-2.675-.125-4.416C13.625 1.142 12.233 1.75 11.05 3z" stroke="#262626" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </div>
+                                    <div class="anatomy-cta">
+                                        <button class="anatomy-btn secondary">خرید بیمه</button>
+                                        <button class="anatomy-btn primary">
+                                            ۰۹۱۲۱۴۳۸۹۷۶
+                                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                                <path d="M21.97 18.33c0 .36-.08.73-.25 1.09-.17.36-.39.7-.68 1.02-.49.54-1.03.93-1.64 1.18-.6.25-1.25.38-1.95.38-1.02 0-2.11-.24-3.26-.73s-2.3-1.15-3.44-1.98a28.75 28.75 0 01-3.28-2.8 28.414 28.414 0 01-2.79-3.27c-.82-1.14-1.48-2.28-1.96-3.41C2.24 8.67 2 7.58 2 6.54c0-.68.12-1.33.36-1.93.24-.61.62-1.17 1.15-1.67C4.15 2.31 4.85 2 5.59 2c.28 0 .56.06.81.18.26.12.49.3.67.56l2.32 3.27c.18.25.31.48.4.7.09.21.14.42.14.61 0 .24-.07.48-.21.71-.13.23-.32.47-.56.71l-.76.79c-.11.11-.16.24-.16.4 0 .08.01.15.03.23.03.08.06.14.08.2.18.33.49.76.93 1.28.45.52.93 1.05 1.45 1.58.54.53 1.06 1.02 1.59 1.47.52.44.95.74 1.29.92.05.02.11.05.18.08.08.03.16.04.25.04.17 0 .3-.06.41-.17l.76-.75c.25-.25.49-.44.72-.56.23-.14.46-.21.71-.21.19 0 .39.04.61.13.22.09.45.22.7.39l3.31 2.35c.26.18.44.39.55.64.1.25.16.5.16.78z" stroke="#262626" stroke-width="1.5" stroke-miterlimit="10"/>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="specs-card">
+                        <table class="specs-table">
+                            <thead>
+                                <tr>
+                                    <th style="width: 60px;">شماره</th>
+                                    <th>عنصر</th>
+                                    <th>توضیحات</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>۱</strong></td>
+                                    <td>نام مشتری</td>
+                                    <td>نام کامل صاحب بیمه‌نامه</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>۲</strong></td>
+                                    <td>اطلاعات خودرو</td>
+                                    <td>برند، مدل و سال تولید خودرو</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>۳</strong></td>
+                                    <td>اطلاعات بیمه</td>
+                                    <td>نام شرکت بیمه و نوع بیمه‌نامه</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>۴</strong></td>
+                                    <td>برچسب‌های وضعیت</td>
+                                    <td>روزهای تا انقضا و نوع پرداخت (نقدی/قسطی)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>۵</strong></td>
+                                    <td>یادداشت</td>
+                                    <td>محل نوشتن و نمایش یادداشت کاربر + زمان</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>۶</strong></td>
+                                    <td>دکمه‌های اقدام</td>
+                                    <td>دکمه تماس و خرید بیمه</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- Data -->
+                <section class="specs-section" id="data">
+                    <h2 class="specs-section-title">اطلاعات کارت</h2>
+                    
+                    <div class="specs-card">
+                        <table class="specs-table">
+                            <thead>
+                                <tr>
+                                    <th>فیلد</th>
+                                    <th>نوع</th>
+                                    <th>توضیحات</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>id</code></td>
+                                    <td>string</td>
+                                    <td>شناسه یکتای لید</td>
+                                </tr>
+                                <tr>
+                                    <td><code>name</code></td>
+                                    <td>string</td>
+                                    <td>نام مشتری</td>
+                                </tr>
+                                <tr>
+                                    <td><code>vehicle</code></td>
+                                    <td>object</td>
+                                    <td>برند، مدل، سال تولید</td>
+                                </tr>
+                                <tr>
+                                    <td><code>insurance</code></td>
+                                    <td>object</td>
+                                    <td>شرکت بیمه، نوع بیمه</td>
+                                </tr>
+                                <tr>
+                                    <td><code>paymentType</code></td>
+                                    <td>string</td>
+                                    <td>"نقدی" یا "قسطی"</td>
+                                </tr>
+                                <tr>
+                                    <td><code>expirationDate</code></td>
+                                    <td>date</td>
+                                    <td>تاریخ انقضای بیمه</td>
+                                </tr>
+                                <tr>
+                                    <td><code>status</code></td>
+                                    <td>string</td>
+                                    <td>وضعیت لید</td>
+                                </tr>
+                                <tr>
+                                    <td><code>note</code></td>
+                                    <td>object</td>
+                                    <td>متن یادداشت + زمان ایجاد/ویرایش</td>
+                                </tr>
+                                <tr>
+                                    <td><code>phoneNumber</code></td>
+                                    <td>string</td>
+                                    <td>شماره تماس (اختیاری)</td>
+                                </tr>
+                                <tr>
+                                    <td><code>assignedTo</code></td>
+                                    <td>string</td>
+                                    <td>شناسه کاربر اختصاص داده شده</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- Status -->
+                <section class="specs-section" id="status">
+                    <h2 class="specs-section-title">وضعیت‌ها</h2>
+                    
+                    <div class="status-list">
+                        <div class="status-item">
+                            <span class="status-dot available"></span>
+                            <span><code>available</code> - آماده اختصاص</span>
+                        </div>
+                        <div class="status-item">
+                            <span class="status-dot inProgress"></span>
+                            <span><code>inProgress</code> - در حال پیگیری</span>
+                        </div>
+                        <div class="status-item">
+                            <span class="status-dot denied"></span>
+                            <span><code>denied</code> - رد شده توسط مشتری</span>
+                        </div>
+                        <div class="status-item">
+                            <span class="status-dot converted"></span>
+                            <span><code>converted</code> - تمدید شده</span>
+                        </div>
+                        <div class="status-item">
+                            <span class="status-dot rejected"></span>
+                            <span><code>rejected</code> - رد شده توسط سیستم</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Sorting -->
+                <section class="specs-section" id="sorting">
+                    <h2 class="specs-section-title">ترتیب نمایش</h2>
+                    
+                    <p style="font-size: 16px; line-height: 28px; color: var(--specs-on-surface-variant); margin-bottom: 24px;">
+                        کارت‌ها بر اساس فاصله تا انقضا مرتب می‌شوند. کارت‌هایی که نزدیک به انقضا هستند اول نمایش داده می‌شوند.
+                        کارت‌هایی که تازه منقضی شده‌اند هم هنوز در اولویت هستند، ولی کارت‌های خیلی قدیمی به انتهای لیست می‌روند.
+                    </p>
+                    
+                    <div class="specs-card">
+                        <div class="specs-card-header">
+                            <h3 class="specs-card-title">فرمول مرتب‌سازی</h3>
+                        </div>
+                        <div class="specs-card-body">
+                            <div class="specs-formula">
+                                sortKey = (daysToExpire + 3650) % 367
+                            </div>
+                            
+                            <div class="specs-info">
+                                <h4 class="specs-info-title">نحوه عملکرد</h4>
+                                <p>
+                                    <code>daysToExpire</code> تعداد روز تا انقضاست (مثبت یعنی هنوز منقضی نشده، منفی یعنی منقضی شده).
+                                    با اضافه کردن ۳۶۵۰ و گرفتن باقیمانده بر ۳۶۷، کارت‌ها به ترتیب درست مرتب می‌شوند.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="specs-card">
+                        <div class="specs-card-header">
+                            <h3 class="specs-card-title">اولویت نمایش</h3>
+                        </div>
+                        <div class="specs-card-body">
+                            <table class="specs-table">
+                                <thead>
+                                    <tr>
+                                        <th>اولویت</th>
+                                        <th>وضعیت</th>
+                                        <th>توضیح</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>۱ ▲</td>
+                                        <td>نزدیک به انقضا</td>
+                                        <td>کارت‌هایی که ۱ تا ۳۰ روز تا انقضایشان مانده</td>
+                                    </tr>
+                                    <tr>
+                                        <td>۲</td>
+                                        <td>تازه منقضی شده</td>
+                                        <td>کارت‌هایی که ۱ تا چند روز از انقضایشان گذشته</td>
+                                    </tr>
+                                    <tr>
+                                        <td>۳</td>
+                                        <td>زمان دار</td>
+                                        <td>کارت‌هایی که بیش از ۳۰ روز تا انقضا دارند</td>
+                                    </tr>
+                                    <tr>
+                                        <td>۴ ▼</td>
+                                        <td>قدیمی</td>
+                                        <td>کارت‌هایی که مدت زیادی از انقضایشان گذشته</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Time Display -->
+                <section class="specs-section" id="time-display">
+                    <h2 class="specs-section-title">نمایش زمان یادداشت</h2>
+                    
+                    <p style="font-size: 16px; line-height: 28px; color: var(--specs-on-surface-variant); margin-bottom: 24px;">
+                        زمان یادداشت به صورت نسبی نمایش داده می‌شود. همیشه از زمان آخرین ویرایش (<code>updatedAt</code>) استفاده کنید.
+                    </p>
+                    
+                    <div class="time-display">
+                        <div class="time-item">
+                            <div class="time-range">کمتر از ۱۰ دقیقه</div>
+                            <div class="time-output">دقایقی قبل</div>
+                        </div>
+                        <div class="time-item">
+                            <div class="time-range">۱۰ تا ۶۰ دقیقه</div>
+                            <div class="time-output">۲۸ دقیقه قبل</div>
+                        </div>
+                        <div class="time-item">
+                            <div class="time-range">۱ تا ۲۴ ساعت</div>
+                            <div class="time-output">۳ ساعت قبل</div>
+                        </div>
+                        <div class="time-item">
+                            <div class="time-range">۱ تا ۳۰ روز</div>
+                            <div class="time-output">۵ روز قبل</div>
+                        </div>
+                        <div class="time-item">
+                            <div class="time-range">بیش از ۳۰ روز</div>
+                            <div class="time-output">بیش از یک ماه پیش</div>
+                        </div>
+                    </div>
+                    
+                    <div class="specs-info">
+                        <h4 class="specs-info-title">نکته</h4>
+                        <p>اعداد باید به فارسی نمایش داده شوند.</p>
+                    </div>
+                </section>
+
+                <!-- Expiration -->
+                <section class="specs-section" id="expiration">
+                    <h2 class="specs-section-title">نمایش روزهای تا انقضا</h2>
+                    
+                    <div class="specs-card">
+                        <table class="specs-table">
+                            <thead>
+                                <tr>
+                                    <th>شرایط</th>
+                                    <th>نمایش</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>۰ تا ۳۰ روز مانده</td>
+                                    <td><strong>۸ روز تا انقضاء</strong></td>
+                                </tr>
+                                <tr>
+                                    <td>بیش از ۳۰ روز مانده</td>
+                                    <td><strong>بیش از ۳۰ روز تا انقضا</strong></td>
+                                </tr>
+                                <tr>
+                                    <td>منقضی شده</td>
+                                    <td>نمایش داده نمی‌شود یا <strong>منقضی شده</strong></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p class="footer-text">&copy; ۱۴۰۴ پلتفرم شرکای بیمه بازار</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Nav scroll spy
+        const sections = document.querySelectorAll('.specs-section');
+        const navLinks = document.querySelectorAll('.specs-nav-list a');
+        
+        function updateActiveNav() {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (window.pageYOffset >= sectionTop - 150) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        }
+        
+        window.addEventListener('scroll', updateActiveNav);
+        
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+        
+        // Mobile nav
+        const navToggle = document.getElementById('navToggle');
+        const navMenu = document.getElementById('navMenu');
+        const navBackdrop = document.getElementById('navBackdrop');
+        
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            navToggle.classList.toggle('active');
+            navBackdrop.classList.toggle('active');
+            document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
+        });
+        
+        navBackdrop.addEventListener('click', () => {
+            navMenu.classList.remove('active');
+            navToggle.classList.remove('active');
+            navBackdrop.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+        
+        // Navbar scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('mainNav');
+            nav.classList.toggle('scrolled', window.pageYOffset > 50);
+        });
+    </script>
+</body>
+</html>
