@@ -869,8 +869,14 @@
                         </div>
                         <div class="specs-card-body">
                             <p style="color: var(--specs-on-surface-variant); margin-bottom: 16px;">
-                                کارتی که فروش موفق داشته و بیمه توسط کاربر تمدید شده است. همچنین کارت‌هایی که sortKey آن‌ها بیش از ۳۰ باشد (خیلی قدیمی یا خیلی دور) در این وضعیت قرار می‌گیرند.
+                                کارتی که <code>sortKey &gt; 27</code> باشد <strong>و</strong> این لید توسط همین کاربر تمدید شده باشد.
                             </p>
+                            <div class="specs-info" style="margin-bottom: 16px; background: #eef9ff;">
+                                <h4 class="specs-info-title">شرط نمایش</h4>
+                                <p>
+                                    <code>sortKey &gt; 27</code> و <code>convertedBy === currentUserId</code>
+                                </p>
+                            </div>
                             <table class="specs-table">
                                 <thead>
                                     <tr>
@@ -888,7 +894,7 @@
                                     <tr>
                                         <td>برچسب «تمدید شده توسط شما»</td>
                                         <td><span style="color: #2b8c52;">✓ نمایش</span></td>
-                                        <td>نشان‌دهنده موفقیت</td>
+                                        <td>نشان‌دهنده موفقیت فروش</td>
                                     </tr>
                                     <tr>
                                         <td>ردیف اقدامات (Action Row)</td>
@@ -908,7 +914,7 @@
                                     <tr>
                                         <td>دکمه خرید بیمه</td>
                                         <td><span style="color: #dc2626;">✗ پنهان</span></td>
-                                        <td>تمدید منطقی نیست چون یا انجام شده یا خیلی قدیمی است</td>
+                                        <td>بیمه قبلاً تمدید شده</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -972,17 +978,23 @@
                         </div>
                     </div>
 
-                    <!-- +10 Days to Expire -->
+                    <!-- +30 Days to Expire -->
                     <div class="specs-card">
                         <div class="specs-card-header" style="background: #f5f5f5; border-bottom-color: #666666;">
                             <div style="display: flex; align-items: center; gap: 12px;">
-                                <h3 class="specs-card-title">بیش از ۳۰ روز تا انقضا</h3>
+                                <h3 class="specs-card-title">بیش از ۳۰ روز تا انقضا (+30 Days to Expire)</h3>
                             </div>
                         </div>
                         <div class="specs-card-body">
                             <p style="color: var(--specs-on-surface-variant); margin-bottom: 16px;">
-                                کارتی که زمان زیادی تا انقضای بیمه دارد و هنوز زود است برای پیگیری.
+                                کارتی که <code>sortKey &gt; 27</code> باشد و توسط این کاربر تمدید نشده باشد. این کارت‌ها یا خیلی زود هستند (بیش از ۳۰ روز مانده) یا خیلی دیر (مدت‌ها از انقضا گذشته).
                             </p>
+                            <div class="specs-info" style="margin-bottom: 16px; background: #eef9ff;">
+                                <h4 class="specs-info-title">شرط نمایش</h4>
+                                <p>
+                                    <code>sortKey &gt; 27</code> و <code>convertedBy !== currentUserId</code>
+                                </p>
+                            </div>
                             <table class="specs-table">
                                 <thead>
                                     <tr>
@@ -1003,19 +1015,24 @@
                                         <td>نشان‌دهنده زمان‌بندی</td>
                                     </tr>
                                     <tr>
-                                        <td>یادداشت سیستم</td>
+                                        <td>پیام سیستم</td>
                                         <td><span style="color: #2b8c52;">✓ نمایش</span></td>
-                                        <td>راهنمایی برای کاربر (غیرقابل ویرایش)</td>
+                                        <td>«امکان خرید بیمه برای این کاربر وجود ندارد» (غیرقابل ویرایش)</td>
                                     </tr>
                                     <tr>
                                         <td>شماره تماس</td>
                                         <td><span style="color: #dc2626;">✗ پنهان</span></td>
-                                        <td>زود است برای تماس</td>
+                                        <td>امکان پیگیری فعلاً وجود ندارد</td>
                                     </tr>
                                     <tr>
                                         <td>دکمه خرید بیمه</td>
                                         <td><span style="color: #dc2626;">✗ پنهان</span></td>
-                                        <td>زود است برای خرید</td>
+                                        <td>امکان خرید وجود ندارد</td>
+                                    </tr>
+                                    <tr>
+                                        <td>یادداشت کاربر</td>
+                                        <td><span style="color: #dc2626;">✗ پنهان</span></td>
+                                        <td>نیازی به ثبت یادداشت نیست</td>
                                     </tr>
                                 </tbody>
                             </table>
